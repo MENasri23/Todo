@@ -40,6 +40,7 @@ dependencies {
     implementation(project(":shared"))
 
     implementation(Libs.Androidx.Room.RUNTIME)
+    implementation(Libs.Androidx.Room.ktx)
     implementation(Libs.Kotlinx.COROUTINES)
 
     kapt(Libs.Androidx.Room.COMPILER)

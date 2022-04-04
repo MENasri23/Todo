@@ -3,6 +3,7 @@ package com.example.shared.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
 import java.time.Instant
 import java.util.*
 
@@ -21,6 +22,7 @@ class Task(
     /**
      * the unique random id to store task in database.
      */
+    @PrimaryKey
     val id: String = UUID.randomUUID().toString(),
 
     /**

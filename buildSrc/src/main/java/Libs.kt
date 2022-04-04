@@ -32,13 +32,14 @@ object Libs {
         object Room {
             const val RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
             const val COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+            const val ktx = "androidx.room:room-ktx:${Versions.ROOM}"
         }
 
         fun DependencyHandler.implementAppLibraries() {
             add("implementation", CORE_KTX)
-            add("implementation", CORE_KTX)
-            add("implementation", CORE_KTX)
-            add("implementation", CORE_KTX)
+            add("implementation", APPCOMPAT)
+            add("implementation", ANDROID_MATERIAL)
+            add("implementation", CONSTRAINT_LAYOUT)
         }
     }
 
