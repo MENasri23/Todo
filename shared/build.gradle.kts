@@ -34,10 +34,9 @@ android {
 dependencies {
 
     implementation(Libs.Androidx.CORE_KTX)
-    implementation(Libs.Androidx.APPCOMPAT)
-    implementation(Libs.Androidx.ANDROID_MATERIAL)
-    testImplementation(Libs.Test.JUNIT)
-
     implementation(Libs.Androidx.Room.RUNTIME)
+
     kapt(Libs.Androidx.Room.COMPILER)
+
+    testImplementation(Libs.Test.JUNIT)
 }

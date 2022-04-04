@@ -39,15 +39,12 @@ dependencies {
 
     implementation(project(":shared"))
 
-    implementation(Libs.Androidx.CORE_KTX)
-    implementation(Libs.Androidx.APPCOMPAT)
-    implementation(Libs.Androidx.ANDROID_MATERIAL)
-    testImplementation(Libs.Test.JUNIT)
     implementation(Libs.Androidx.Room.RUNTIME)
     implementation(Libs.Kotlinx.COROUTINES)
 
     kapt(Libs.Androidx.Room.COMPILER)
 
+    testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)
     androidTestImplementation(Libs.Test.ESPRESSO)
 }
