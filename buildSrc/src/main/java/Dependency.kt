@@ -34,6 +34,8 @@ object Versions {
 
     const val ROOM = "2.4.2"
 
+    const val COROUTINE = "1.3.9"
+
 }
 
 object Libs {
@@ -66,6 +68,9 @@ object Libs {
 
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+
+    const val KOTLINX_COROUTINES_ANDROID =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINE}"
 
 
 }
