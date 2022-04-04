@@ -60,6 +60,11 @@ object Libs {
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3_LOGGING_INTERCEPTOR}"
     }
 
+    object Dagger {
+        const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
+        const val COMPILER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
+    }
+
     object Glide {
         const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
         const val COMPILER = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"

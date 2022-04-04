@@ -38,4 +38,6 @@ object Versions {
 
     const val COROUTINE = "1.3.9"
 
+    const val DAGGER = "2.40.5"
+
 }

@@ -42,8 +42,10 @@ dependencies {
     implementation(Libs.Androidx.Room.RUNTIME)
     implementation(Libs.Androidx.Room.ktx)
     implementation(Libs.Kotlinx.COROUTINES)
+    implementation(Libs.Dagger.DAGGER)
 
     kapt(Libs.Androidx.Room.COMPILER)
+    kapt(Libs.Dagger.COMPILER)
 
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)
