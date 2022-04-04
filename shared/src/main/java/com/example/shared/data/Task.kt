@@ -1,5 +1,6 @@
 package com.example.shared.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import java.time.Instant
@@ -7,6 +8,13 @@ import java.util.*
 
 @Entity(
     tableName = "tasks",
+    foreignKeys = [
+        ForeignKey(
+            entity = User::class,
+            parentColumns = ["id"],
+            childColumns = ["owner_id"]
+        )
+    ]
 )
 class Task(
 
@@ -30,16 +38,19 @@ class Task(
     /**
      * the user who is the owner of the task.
      */
+    @ColumnInfo(name = "owner_id", index = true)
     val ownerId: String,
 
     /**
      * When the task was created.
      */
+    @ColumnInfo(name = "created_at")
     val createdAt: Instant = Instant.now(),
 
     /**
      * When to do it.
      */
+    @ColumnInfo(name = "due_at")
     val dueAt: Instant? = null,
 )
 
