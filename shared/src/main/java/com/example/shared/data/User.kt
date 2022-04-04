@@ -20,4 +20,7 @@ data class User(
 
     @ColumnInfo(name = "last_name")
     val lastName: String? = null,
+
+    @ColumnInfo(name = "image_url")
+    val avatar: String? = null
 )
