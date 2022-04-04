@@ -39,7 +39,7 @@ class Task(
      * the user who is the owner of the task.
      */
     @ColumnInfo(name = "owner_id", index = true)
-    val ownerId: String,
+    val ownerId: Long,
 
     /**
      * When the task was created.
