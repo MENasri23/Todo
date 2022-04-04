@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -6,11 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -19,10 +18,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -37,17 +33,11 @@ android {
 
 dependencies {
 
-    implementation(project(":shared"))
-
     implementation(Libs.Androidx.CORE_KTX)
     implementation(Libs.Androidx.APPCOMPAT)
     implementation(Libs.Androidx.ANDROID_MATERIAL)
     testImplementation(Libs.Test.JUNIT)
+
     implementation(Libs.Androidx.Room.RUNTIME)
-    implementation(Libs.Kotlinx.COROUTINES)
-
     kapt(Libs.Androidx.Room.COMPILER)
-
-    androidTestImplementation(Libs.Test.JUNIT_EXT)
-    androidTestImplementation(Libs.Test.ESPRESSO)
 }
