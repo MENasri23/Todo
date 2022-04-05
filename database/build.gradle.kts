@@ -40,7 +40,7 @@ dependencies {
     implementation(project(":shared"))
 
     implementation(Libs.Androidx.Room.RUNTIME)
-    implementation(Libs.Androidx.Room.ktx)
+    implementation(Libs.Androidx.Room.KTX)
     implementation(Libs.Kotlinx.COROUTINES)
     implementation(Libs.Dagger.DAGGER)
 
