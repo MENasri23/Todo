@@ -46,6 +46,8 @@ object Libs {
     object Kotlinx {
         const val COROUTINES =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
+        const val COROUTINES_TEST =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_TEST}"
     }
 
     object Retrofit {
