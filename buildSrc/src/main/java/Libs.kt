@@ -32,7 +32,7 @@ object Libs {
         object Room {
             const val RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
             const val COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
-            const val ktx = "androidx.room:room-ktx:${Versions.ROOM}"
+            const val KTX = "androidx.room:room-ktx:${Versions.ROOM}"
         }
 
         fun DependencyHandler.implementAppLibraries() {
@@ -45,7 +45,7 @@ object Libs {
 
     object Kotlinx {
         const val COROUTINES =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINE}"
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     }
 
     object Retrofit {
