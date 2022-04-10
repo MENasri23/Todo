@@ -1,6 +1,7 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Libs {
+    private const val IMPLEMENTATION = "implementation"
 
     object Test {
         const val JUNIT = "junit:junit:4.13:${Versions.JUNIT}"
@@ -36,10 +37,10 @@ object Libs {
         }
 
         fun DependencyHandler.implementAppLibraries() {
-            add("implementation", CORE_KTX)
-            add("implementation", APPCOMPAT)
-            add("implementation", ANDROID_MATERIAL)
-            add("implementation", CONSTRAINT_LAYOUT)
+            add(IMPLEMENTATION, CORE_KTX)
+            add(IMPLEMENTATION, APPCOMPAT)
+            add(IMPLEMENTATION, ANDROID_MATERIAL)
+            add(IMPLEMENTATION, CONSTRAINT_LAYOUT)
         }
     }
 
