@@ -5,7 +5,10 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.database.dao.TaskDao
 import com.example.database.dao.UserDao
-import org.junit.Assert.*
+import com.example.shared.data.Task
+import com.google.common.truth.Truth.*
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 
 import org.junit.After
 import org.junit.Before
