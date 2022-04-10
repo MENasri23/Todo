@@ -50,6 +50,6 @@ dependencies {
 
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)
-    androidTestImplementation(Libs.Test.ESPRESSO)
     androidTestImplementation(Libs.Kotlinx.COROUTINES_TEST)
+
 }
