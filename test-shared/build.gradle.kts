@@ -34,4 +34,8 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+
+    implementation(Libs.Test.JUNIT)
+    implementation(Libs.Test.JUNIT_EXT)
+    api(Libs.Kotlinx.COROUTINES_TEST)
 }
