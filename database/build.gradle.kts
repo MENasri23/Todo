@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -38,7 +37,8 @@ android {
 dependencies {
 
     implementation(project(":shared"))
-    implementation(project(":test-shared"))
+    testImplementation(project(":test-shared"))
+
 
     implementation(Libs.Androidx.Room.RUNTIME)
     implementation(Libs.Androidx.Room.KTX)
@@ -49,7 +49,7 @@ dependencies {
     kapt(Libs.Dagger.COMPILER)
 
     testImplementation(Libs.Test.JUNIT)
-    androidTestImplementation(Libs.Test.JUNIT_EXT)
-    androidTestImplementation(Libs.Kotlinx.COROUTINES_TEST)
+    testImplementation(Libs.Test.JUNIT_EXT)
+    testImplementation(Libs.Test.TRUTH)
 
 }
