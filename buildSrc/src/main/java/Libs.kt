@@ -7,6 +7,7 @@ object Libs {
         const val JUNIT = "junit:junit:4.13:${Versions.JUNIT}"
         const val JUNIT_EXT = "androidx.test.ext:junit:${Versions.JUNIT_EXT}"
         const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+        const val TRUTH = "com.google.truth:truth:${Versions.TRUTH}"
     }
 
     object Androidx {

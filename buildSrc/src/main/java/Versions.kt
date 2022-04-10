@@ -23,6 +23,7 @@ object Versions {
     const val JUNIT = "4.13"
     const val JUNIT_EXT = "1.1.1"
     const val ESPRESSO = "3.4.0"
+    const val TRUTH = "1.1.3"
 
     const val LIFECYCLE_LIVEDATA_KTX = "2.4.1"
     const val LIFECYCLE_VIEW_MODEL_KTX = "2.4.1"
