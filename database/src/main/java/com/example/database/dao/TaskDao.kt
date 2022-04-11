@@ -1,9 +1,6 @@
 package com.example.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.database.view.TaskDetail
 import com.example.shared.data.Task
 import kotlinx.coroutines.flow.Flow
@@ -17,9 +14,15 @@ interface TaskDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTasks(tasks: List<Task>)
 
+    @Transaction
     @Query("SELECT * FROM tasks AS t WHERE t.owner_id = :userId")
     fun loadUserTaskDetails(userId: Long): Flow<List<TaskDetail>>
 
+    @Transaction
     @Query("SELECT * FROM tasks")
-    fun getTasks(): Flow<List<TaskDetail>>
+    fun getTaskDetails(): Flow<List<TaskDetail>>
+
+    @Query("SELECT * FROM task_detail WHERE id = :id ")
+    fun findTaskDetailById(id: String): Flow<TaskDetail?>
+
 }
