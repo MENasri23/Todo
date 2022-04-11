@@ -2,9 +2,11 @@ package com.example.shared.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Fts4
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "users")
+@Fts4
 data class User(
     @PrimaryKey // TODO: Define with auto generated property
     val id: Long,
