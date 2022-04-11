@@ -15,7 +15,8 @@ import java.time.Instant
             u.last_name AS owner_last_name, u.email AS owner_email, u.image_url AS owner_image_url
         FROM tasks AS t
         INNER JOIN users AS u ON u.id = t.owner_id
-    """
+    """,
+    viewName = "task_detail"
 )
 data class TaskDetail(
     val id: String,
