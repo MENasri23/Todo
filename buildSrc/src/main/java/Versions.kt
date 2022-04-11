@@ -9,11 +9,6 @@ object Versions {
 
     const val KOTLIN = "1.6.10"
     const val ANDROID_GRADLE_PLUGIN = "7.0.3"
-    const val BENCHMARK = "1.0.0"
-    const val COMPOSE = "1.0.0-beta04"
-    const val FIREBASE_CRASHLYTICS = "2.3.0"
-    const val GOOGLE_SERVICES = "4.3.3"
-
 
     const val CORE_KTX = "1.7.0"
     const val APPCOMPAT = "1.4.1"
