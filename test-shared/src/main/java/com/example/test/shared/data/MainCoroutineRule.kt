@@ -20,7 +20,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*
-import kotlinx.coroutines.withContext
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
@@ -41,11 +40,10 @@ class MainCoroutineRule(
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-fun MainCoroutineRule.runBlockingTest(block: suspend TestScope.() -> Unit) = runTest {
-    withContext(testDispatcher) {
+fun MainCoroutineRule.runBlockingTest(block: suspend TestScope.() -> Unit) =
+    runTest(testDispatcher) {
         block()
     }
-}
 
 /**
  * Creates a new [CoroutineScope] with the rule's testDispatcher
