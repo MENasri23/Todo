@@ -14,7 +14,6 @@ import java.util.*
         )
     ]
 )
-@Fts4
 class Task(
 
     /**
