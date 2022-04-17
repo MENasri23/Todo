@@ -5,14 +5,24 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Versions.COMPILE_SDK
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -37,19 +47,37 @@ android {
 dependencies {
 
     implementation(project(":shared"))
-    testImplementation(project(":test-shared"))
-
+    androidTestImplementation(project(":test-shared"))
 
     implementation(Libs.Androidx.Room.RUNTIME)
     implementation(Libs.Androidx.Room.KTX)
-    implementation(Libs.Kotlinx.COROUTINES)
+    implementation(Libs.Kotlinx.COROUTINES_ANDROID)
     implementation(Libs.Dagger.DAGGER)
 
     kapt(Libs.Androidx.Room.COMPILER)
     kapt(Libs.Dagger.COMPILER)
 
+    testImplementation(Libs.Kotlinx.COROUTINES_TEST)
+    testImplementation(Libs.Androidx.TEST_CORE_KTX)
+    testImplementation(Libs.Androidx.ARCH_TEST_CORE)
+    testImplementation(Libs.Androidx.Room.TEST)
     testImplementation(Libs.Test.JUNIT)
     testImplementation(Libs.Test.JUNIT_EXT)
     testImplementation(Libs.Test.TRUTH)
+    testImplementation(Libs.Test.ROBOLECTRIC)
+
+    androidTestImplementation(Libs.Kotlinx.COROUTINES_TEST)
+    androidTestImplementation(Libs.Androidx.ARCH_TEST_CORE)
+    androidTestImplementation(Libs.Androidx.TEST_CORE_KTX)
+    androidTestImplementation(Libs.Test.JUNIT)
+    androidTestImplementation(Libs.Test.JUNIT_EXT)
+    androidTestImplementation(Libs.Test.JUNIT_EXT_KTX)
+    androidTestImplementation(Libs.Test.TRUTH)
+
+    androidTestImplementation(Libs.Androidx.TEST_RULES)
+    androidTestImplementation(Libs.Androidx.TEST_RUNNER)
+
+    coreLibraryDesugaring(Libs.Core.DESUGAR)
+
 
 }

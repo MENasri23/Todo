@@ -7,13 +7,13 @@ import java.time.Instant
 class DatabaseTypeConverters {
 
     @TypeConverter
-    fun longToInstant(value: Long): Instant {
-        return Instant.ofEpochMilli(value)
+    fun longToInstant(value: Long?): Instant? {
+        return value?.let { Instant.ofEpochMilli(value) }
     }
 
     @TypeConverter
-    fun instantToLong(instant: Instant): Long {
-        return instant.toEpochMilli()
+    fun instantToLong(instant: Instant?): Long? {
+        return instant?.toEpochMilli()
     }
 
     @TypeConverter

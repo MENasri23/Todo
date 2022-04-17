@@ -1,3 +1,9 @@
+buildscript {
+    val agp_version by extra("7.2.0")
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+    }
+}
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id("com.android.application").version("7.1.2").apply(false)
@@ -10,3 +16,8 @@ plugins {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }*/
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
+    }
+}

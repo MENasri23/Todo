@@ -37,5 +37,5 @@ dependencies {
 
     implementation(Libs.Test.JUNIT)
     implementation(Libs.Test.JUNIT_EXT)
-    api(Libs.Kotlinx.COROUTINES_TEST)
+    implementation(Libs.Kotlinx.COROUTINES_TEST)
 }
