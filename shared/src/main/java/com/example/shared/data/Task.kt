@@ -32,7 +32,7 @@ class Task(
     /**
      * Hold the current state of the task.
      */
-    val status: TaskStatus,
+    val status: TaskStatus = TaskStatus.Todo,
 
     /**
      * the user who is the owner of the task.

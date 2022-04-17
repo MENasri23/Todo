@@ -15,11 +15,11 @@ interface TaskDao {
     suspend fun insertTasks(tasks: List<Task>)
 
     @Transaction
-    @Query("SELECT * FROM tasks AS t WHERE t.owner_id = :userId")
+    @Query("SELECT * FROM task_detail AS t WHERE t.owner_id = :userId")
     fun loadUserTaskDetails(userId: Long): Flow<List<TaskDetail>>
 
     @Transaction
-    @Query("SELECT * FROM tasks")
+    @Query("SELECT * FROM task_detail")
     fun getTaskDetails(): Flow<List<TaskDetail>>
 
     @Query("SELECT * FROM task_detail WHERE id = :id ")
