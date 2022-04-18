@@ -1,6 +1,5 @@
 package com.example.database
 
-import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
@@ -130,6 +129,20 @@ class AppDatabaseTest {
     fun removeTask_WhenTaskTableIsEmpty() = coroutineRule.runBlockingTest {
         val removedCount = taskDao.remove(FakeData.task1)
         assertThat(removedCount).isEqualTo(0)
+    }
+
+    @Test
+    fun removeUserTasks_whenUserDeleted() = coroutineRule.runBlockingTest {
+        val user = FakeData.user1
+        val tasks = listOf(FakeData.task2, FakeData.task4)
+        insertData(listOf(user), tasks)
+
+        val removedCount = userDao.removeUser(user)
+        val currentUserTaskDetails = taskDao.loadUserTaskDetails(user.id).first()
+
+        assertThat(removedCount).isEqualTo(1)
+        assertThat(currentUserTaskDetails).isEmpty()
+
     }
 
     suspend fun insertData(

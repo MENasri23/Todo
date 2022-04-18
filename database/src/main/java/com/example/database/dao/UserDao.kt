@@ -1,9 +1,6 @@
 package com.example.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.shared.data.User
 
 @Dao
@@ -14,6 +11,9 @@ interface UserDao {
 
     @Query("SELECT * FROM users WHERE id = :userId LIMIT 1")
     suspend fun findUserById(userId: Long): User?
+
+    @Delete
+    suspend fun removeUser(user: User): Int
 
 
 }

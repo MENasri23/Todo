@@ -1,6 +1,7 @@
 package com.example.shared.data
 
 import androidx.room.*
+import androidx.room.ForeignKey.CASCADE
 import java.time.Instant
 import java.util.*
 
@@ -10,7 +11,8 @@ import java.util.*
         ForeignKey(
             entity = User::class,
             parentColumns = ["id"],
-            childColumns = ["owner_id"]
+            childColumns = ["owner_id"],
+            onDelete = CASCADE
         )
     ]
 )
