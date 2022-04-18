@@ -9,10 +9,12 @@ import androidx.test.filters.SmallTest
 import com.example.database.dao.TaskDao
 import com.example.database.dao.UserDao
 import com.example.database.view.TaskDetail
+import com.example.shared.data.Task
+import com.example.shared.data.User
 import com.example.test.shared.data.FakeData
 import com.example.test.shared.data.MainCoroutineRule
 import com.example.test.shared.data.runBlockingTest
-import com.google.common.truth.Truth
+import com.google.common.truth.Truth.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import org.junit.After
@@ -62,7 +64,7 @@ class AppDatabaseTest {
     @Test
     fun getTasks_whenNoTaskInserted() = coroutineRule.runBlockingTest {
         val tasks: List<TaskDetail> = taskDao.getTaskDetails().first()
-        Truth.assertThat(tasks).isEmpty()
+        assertThat(tasks).isEmpty()
     }
 
     @Test
@@ -74,8 +76,66 @@ class AppDatabaseTest {
 
             val taskDetails = taskDao.getTaskDetails().first()
             val taskDetail1 = taskDetails[0]
-            Truth.assertThat(taskDetails).hasSize(2)
-            Truth.assertThat(taskDetail1.id).isEqualTo(task1.id)
+            assertThat(taskDetails).hasSize(2)
+            assertThat(taskDetail1.id).isEqualTo(task1.id)
+        }
+    }
+
+    @Test
+    fun loadUserTaskDetails_whenNewTasksInserted() = coroutineRule.runBlockingTest {
+        with(FakeData) {
+            val users = listOf(user1)
+            val tasks = listOf(task2, task4)
+
+            insertAll(userDao, taskDao, users, tasks)
+
+            taskDao.loadUserTaskDetails(user1.id).first().let { taskDetails ->
+                assertThat(taskDetails).hasSize(2)
+                assertThat(taskDetails[0].id).isEqualTo(task2.id)
+                assertThat(taskDetails[0].title).isEqualTo(task2.title)
+                assertThat(taskDetails[0].description).isEqualTo(task2.description)
+                assertThat(taskDetails[0].createdAt).isEqualTo(task2.createdAt)
+                assertThat(taskDetails[0].dueAt).isEqualTo(task2.dueAt)
+                assertThat(taskDetails[0].status).isEqualTo(task2.status)
+
+            }
+        }
+    }
+
+
+    @Test
+    fun getUserById() = coroutineRule.runBlockingTest {
+        userDao.insertUser(FakeData.user4)
+        userDao.insertUser(FakeData.user3)
+
+        val user = userDao.findUserById(FakeData.user4.id)
+        assertThat(user?.id).isEqualTo(4L)
+    }
+
+    companion object {
+        suspend fun insertAll(
+            userDao: UserDao,
+            taskDao: TaskDao,
+            users: List<User>,
+            tasks: List<Task>
+        ) {
+            insertUsers(userDao, users)
+            insertTasks(taskDao, tasks)
+        }
+
+        suspend fun insertUsers(
+            userDao: UserDao,
+            users: List<User>
+        ) {
+            users.forEach { userDao.insertUser(it) }
+
+        }
+
+        suspend fun insertTasks(
+            taskDao: TaskDao,
+            tasks: List<Task>
+        ) {
+            taskDao.insertTasks(tasks)
         }
     }
 }
