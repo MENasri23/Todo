@@ -9,12 +9,26 @@ object FakeData {
     val user1 = User(
         id = 1L,
         email = "me@email.com",
-        firstName = "Mohammad",
+        firstName = "User1",
     )
 
     val user2 = User(
         id = 2L,
-        firstName = "Ezkar",
+        firstName = "User2",
+        email = "you@email.com",
+        lastName = "nasri",
+        avatar = ""
+    )
+
+    val user3 = User(
+        id = 3L,
+        email = "me@email.com",
+        firstName = "User3",
+    )
+
+    val user4 = User(
+        id = 4L,
+        firstName = "User4",
         email = "you@email.com",
         lastName = "nasri",
         avatar = ""
@@ -32,5 +46,33 @@ object FakeData {
         title = "Task 2",
         status = TaskStatus.Done,
         ownerId = 1L
+    )
+
+    val task3 = Task(
+        id = "3",
+        title = "Task 3",
+        status = TaskStatus.Doing,
+        ownerId = 3L,
+    )
+
+    val task4 = Task(
+        id = "4",
+        title = "Task 4",
+        status = TaskStatus.Done,
+        ownerId = 1L
+    )
+
+    val task5 = Task(
+        id = "5",
+        title = "Task 5",
+        status = TaskStatus.Doing,
+        ownerId = 3L,
+    )
+
+    val task6 = Task(
+        id = "6",
+        title = "Task 6",
+        status = TaskStatus.Done,
+        ownerId = 4L
     )
 }
