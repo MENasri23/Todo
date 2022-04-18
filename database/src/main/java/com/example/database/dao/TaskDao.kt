@@ -25,4 +25,7 @@ interface TaskDao {
     @Query("SELECT * FROM task_detail WHERE id = :id ")
     fun findTaskDetailById(id: String): Flow<TaskDetail?>
 
+    @Delete
+    suspend fun remove(task: Task)
+
 }

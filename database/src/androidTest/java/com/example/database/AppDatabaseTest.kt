@@ -70,9 +70,7 @@ class AppDatabaseTest {
     @Test
     fun getTaskDetails_whenNewTaskInserted() = coroutineRule.runBlockingTest {
         with(FakeData) {
-            userDao.insertUser(user1)
-            userDao.insertUser(user2)
-            taskDao.insertTasks(listOf(task1, task2))
+            insertData(listOf(user1, user2), listOf(task1, task2))
 
             val taskDetails = taskDao.getTaskDetails().first()
             val taskDetail1 = taskDetails[0]
@@ -87,7 +85,7 @@ class AppDatabaseTest {
             val users = listOf(user1)
             val tasks = listOf(task2, task4)
 
-            insertAll(userDao, taskDao, users, tasks)
+            insertData(users, tasks)
 
             taskDao.loadUserTaskDetails(user1.id).first().let { taskDetails ->
                 assertThat(taskDetails).hasSize(2)
@@ -105,11 +103,34 @@ class AppDatabaseTest {
 
     @Test
     fun getUserById() = coroutineRule.runBlockingTest {
-        userDao.insertUser(FakeData.user4)
-        userDao.insertUser(FakeData.user3)
+        insertUsers(userDao, listOf(FakeData.user4, FakeData.user3))
 
         val user = userDao.findUserById(FakeData.user4.id)
         assertThat(user?.id).isEqualTo(4L)
+    }
+
+    @Test
+    fun getUserTaskDetails_whenSomeTaskRemoved() = coroutineRule.runBlockingTest {
+        val users = listOf(FakeData.user1, FakeData.user4)
+        val tasks = listOf(FakeData.task2, FakeData.task4, FakeData.task6)
+
+        insertData(users, tasks)
+
+        taskDao.remove(FakeData.task2)
+
+        val userTaskDetails = taskDao
+            .loadUserTaskDetails(FakeData.user1.id)
+            .first()
+
+        assertThat(userTaskDetails).hasSize(1)
+
+    }
+
+    suspend fun insertData(
+        users: List<User>,
+        tasks: List<Task>
+    ) {
+        insertAll(userDao, taskDao, users, tasks)
     }
 
     companion object {
