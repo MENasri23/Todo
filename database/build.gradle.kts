@@ -57,15 +57,6 @@ dependencies {
     kapt(Libs.Androidx.Room.COMPILER)
     kapt(Libs.Dagger.COMPILER)
 
-    testImplementation(Libs.Kotlinx.COROUTINES_TEST)
-    testImplementation(Libs.Androidx.TEST_CORE_KTX)
-    testImplementation(Libs.Androidx.ARCH_TEST_CORE)
-    testImplementation(Libs.Androidx.Room.TEST)
-    testImplementation(Libs.Test.JUNIT)
-    testImplementation(Libs.Test.JUNIT_EXT)
-    testImplementation(Libs.Test.TRUTH)
-    testImplementation(Libs.Test.ROBOLECTRIC)
-
     androidTestImplementation(Libs.Kotlinx.COROUTINES_TEST)
     androidTestImplementation(Libs.Androidx.ARCH_TEST_CORE)
     androidTestImplementation(Libs.Androidx.TEST_CORE_KTX)
