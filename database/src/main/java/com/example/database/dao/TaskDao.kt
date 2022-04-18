@@ -26,6 +26,6 @@ interface TaskDao {
     fun findTaskDetailById(id: String): Flow<TaskDetail?>
 
     @Delete
-    suspend fun remove(task: Task)
+    suspend fun remove(task: Task): Int
 
 }

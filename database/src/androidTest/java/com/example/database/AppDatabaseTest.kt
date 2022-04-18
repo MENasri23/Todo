@@ -126,6 +126,12 @@ class AppDatabaseTest {
 
     }
 
+    @Test
+    fun removeTask_WhenTaskTableIsEmpty() = coroutineRule.runBlockingTest {
+        val removedCount = taskDao.remove(FakeData.task1)
+        assertThat(removedCount).isEqualTo(0)
+    }
+
     suspend fun insertData(
         users: List<User>,
         tasks: List<Task>
