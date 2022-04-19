@@ -1,7 +1,7 @@
 package com.example.database
 
 import androidx.room.TypeConverter
-import com.example.shared.data.TaskStatus
+import com.example.model.entity.TaskStatus
 import java.time.Instant
 
 class DatabaseTypeConverters {
@@ -17,13 +17,13 @@ class DatabaseTypeConverters {
     }
 
     @TypeConverter
-    fun taskStatusToInt(taskStatus: TaskStatus): Int {
+    fun taskStatusToInt(taskStatus: com.example.model.entity.TaskStatus): Int {
         return taskStatus.ordinal
     }
 
     @TypeConverter
-    fun intToTaskStatus(value: Int): TaskStatus {
-        return TaskStatus.values()[value]
+    fun intToTaskStatus(value: Int): com.example.model.entity.TaskStatus {
+        return com.example.model.entity.TaskStatus.values()[value]
     }
 
 

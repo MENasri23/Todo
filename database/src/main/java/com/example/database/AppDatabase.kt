@@ -6,11 +6,11 @@ import androidx.room.TypeConverters
 import com.example.database.dao.TaskDao
 import com.example.database.dao.UserDao
 import com.example.database.view.TaskDetail
-import com.example.shared.data.Task
-import com.example.shared.data.User
+import com.example.model.entity.Task
+import com.example.model.entity.User
 
 @Database(
-    entities = [Task::class, User::class],
+    entities = [com.example.model.entity.Task::class, com.example.model.entity.User::class],
     views = [TaskDetail::class],
     version = 1,
     exportSchema = false

@@ -46,6 +46,7 @@ android {
 
 dependencies {
 
+    implementation(project(":model"))
     implementation(project(":shared"))
     androidTestImplementation(project(":test-shared"))
 

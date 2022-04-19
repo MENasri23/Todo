@@ -47,6 +47,7 @@ object Libs {
             const val COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
             const val KTX = "androidx.room:room-ktx:${Versions.ROOM}"
             const val TEST = "androidx.room:room-testing:${Versions.ROOM}"
+            const val COMMON = "androidx.room:room-common:${Versions.ROOM}"
         }
 
         fun DependencyHandler.implementAppLibraries() {

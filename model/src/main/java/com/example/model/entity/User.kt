@@ -1,4 +1,4 @@
-package com.example.shared.data
+package com.example.model.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -8,8 +8,8 @@ import androidx.test.filters.SmallTest
 import com.example.database.dao.TaskDao
 import com.example.database.dao.UserDao
 import com.example.database.view.TaskDetail
-import com.example.shared.data.Task
-import com.example.shared.data.User
+import com.example.model.entity.Task
+import com.example.model.entity.User
 import com.example.test.shared.data.FakeData
 import com.example.test.shared.data.MainCoroutineRule
 import com.example.test.shared.data.runBlockingTest
@@ -146,8 +146,8 @@ class AppDatabaseTest {
     }
 
     suspend fun insertData(
-        users: List<User>,
-        tasks: List<Task>
+        users: List<com.example.model.entity.User>,
+        tasks: List<com.example.model.entity.Task>
     ) {
         insertAll(userDao, taskDao, users, tasks)
     }
@@ -156,8 +156,8 @@ class AppDatabaseTest {
         suspend fun insertAll(
             userDao: UserDao,
             taskDao: TaskDao,
-            users: List<User>,
-            tasks: List<Task>
+            users: List<com.example.model.entity.User>,
+            tasks: List<com.example.model.entity.Task>
         ) {
             insertUsers(userDao, users)
             insertTasks(taskDao, tasks)
@@ -165,7 +165,7 @@ class AppDatabaseTest {
 
         suspend fun insertUsers(
             userDao: UserDao,
-            users: List<User>
+            users: List<com.example.model.entity.User>
         ) {
             users.forEach { userDao.insertUser(it) }
 
@@ -173,7 +173,7 @@ class AppDatabaseTest {
 
         suspend fun insertTasks(
             taskDao: TaskDao,
-            tasks: List<Task>
+            tasks: List<com.example.model.entity.Task>
         ) {
             taskDao.insertTasks(tasks)
         }

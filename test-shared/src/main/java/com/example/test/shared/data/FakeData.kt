@@ -1,12 +1,12 @@
 package com.example.test.shared.data
 
-import com.example.shared.data.Task
-import com.example.shared.data.TaskStatus
-import com.example.shared.data.User
+import com.example.model.entity.Task
+import com.example.model.entity.TaskStatus
+import com.example.model.entity.User
 
 object FakeData {
 
-    val user1 = User(
+    val user1 = com.example.model.entity.User(
         id = 1L,
         email = "me@email.com",
         firstName = "User1",

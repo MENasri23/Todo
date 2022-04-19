@@ -1,4 +1,4 @@
-package com.example.shared.data
+package com.example.model.entity
 
 import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
