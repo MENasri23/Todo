@@ -9,10 +9,10 @@ import kotlinx.coroutines.flow.Flow
 interface TaskDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTask(task: com.example.model.entity.Task)
+    suspend fun insertTask(task: Task)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTasks(tasks: List<com.example.model.entity.Task>)
+    suspend fun insertTasks(tasks: List<Task>)
 
     @Transaction
     @Query("SELECT * FROM task_detail AS t WHERE t.owner_id = :userId")
@@ -26,6 +26,6 @@ interface TaskDao {
     fun findTaskDetailById(id: String): Flow<TaskDetail?>
 
     @Delete
-    suspend fun remove(task: com.example.model.entity.Task): Int
+    suspend fun remove(task: Task): Int
 
 }

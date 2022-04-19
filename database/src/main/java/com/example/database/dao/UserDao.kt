@@ -7,13 +7,13 @@ import com.example.model.entity.User
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(user: com.example.model.entity.User): Long
+    suspend fun insertUser(user: User): Long
 
     @Query("SELECT * FROM users WHERE id = :userId LIMIT 1")
-    suspend fun findUserById(userId: Long): com.example.model.entity.User?
+    suspend fun findUserById(userId: Long): User?
 
     @Delete
-    suspend fun removeUser(user: com.example.model.entity.User): Int
+    suspend fun removeUser(user: User): Int
 
 
 }

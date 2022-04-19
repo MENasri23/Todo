@@ -10,7 +10,7 @@ import com.example.model.entity.Task
 import com.example.model.entity.User
 
 @Database(
-    entities = [com.example.model.entity.Task::class, com.example.model.entity.User::class],
+    entities = [Task::class, User::class],
     views = [TaskDetail::class],
     version = 1,
     exportSchema = false
