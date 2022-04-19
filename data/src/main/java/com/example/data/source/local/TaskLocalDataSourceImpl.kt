@@ -3,15 +3,20 @@ package com.example.data.source.local
 import com.example.database.dao.TaskDao
 import com.example.database.view.TaskDetail
 import com.example.model.entity.Task
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 
 class TaskLocalDataSourceImpl(
-    private val taskDao: TaskDao
+    private val taskDao: TaskDao,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.Default
 ) : TaskLocalDataSource {
 
-    override suspend fun insertTasks(tasks: List<Task>) {
-        taskDao.insertTasks(tasks)
-    }
+    override suspend fun insertTasks(tasks: List<Task>) =
+        withContext(dispatcher) {
+            taskDao.insertTasks(tasks)
+        }
 
     override fun getUserTaskDetails(userId: Long): Flow<List<TaskDetail>> {
         return taskDao.loadUserTaskDetails(userId)
@@ -21,7 +26,8 @@ class TaskLocalDataSourceImpl(
         return taskDao.findTaskDetailById(id)
     }
 
-    override suspend fun removeTasks(tasks: List<Task>): Boolean {
-        return taskDao.removeTasks(tasks) != 0
-    }
+    override suspend fun removeTasks(tasks: List<Task>) =
+        withContext(dispatcher) {
+            taskDao.removeTasks(tasks) != 0
+        }
 }
