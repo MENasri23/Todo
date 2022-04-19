@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface TaskLocalDataSource {
 
-    suspend fun insertTasks(tasks: List<Task>): Boolean
+    suspend fun insertTasks(tasks: List<Task>)
 
     fun getUserTaskDetails(userId: Long): Flow<List<TaskDetail>>
 
