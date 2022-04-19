@@ -10,7 +10,7 @@ interface TaskLocalDataSource {
 
     fun getUserTaskDetails(userId: Long): Flow<List<TaskDetail>>
 
-    fun findTaskDetailById(id: String): Flow<TaskDetail>
+    fun findTaskDetailById(id: String): Flow<TaskDetail?>
 
     suspend fun removeTasks(tasks: List<Task>): Boolean
 
