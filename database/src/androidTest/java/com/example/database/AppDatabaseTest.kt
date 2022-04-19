@@ -115,7 +115,7 @@ class AppDatabaseTest {
 
         insertData(users, tasks)
 
-        taskDao.remove(FakeData.task2)
+        taskDao.removeTasks(listOf(FakeData.task2))
 
         val userTaskDetails = taskDao
             .loadUserTaskDetails(FakeData.user1.id)
@@ -127,7 +127,7 @@ class AppDatabaseTest {
 
     @Test
     fun removeTask_WhenTaskTableIsEmpty() = coroutineRule.runBlockingTest {
-        val removedCount = taskDao.remove(FakeData.task1)
+        val removedCount = taskDao.removeTasks(listOf(FakeData.task1))
         assertThat(removedCount).isEqualTo(0)
     }
 
@@ -143,6 +143,15 @@ class AppDatabaseTest {
         assertThat(removedCount).isEqualTo(1)
         assertThat(currentUserTaskDetails).isEmpty()
 
+    }
+
+    @Test
+    fun removeTasks_taskTableIsNotEmpty() = coroutineRule.runBlockingTest {
+        val user = FakeData.user1
+        val tasks = listOf(FakeData.task2, FakeData.task4)
+        insertData(listOf(user), tasks)
+
+        assertThat(taskDao.removeTasks(tasks)).isNotEqualTo(0)
     }
 
     suspend fun insertData(

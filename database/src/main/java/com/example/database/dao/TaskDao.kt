@@ -9,9 +9,6 @@ import kotlinx.coroutines.flow.Flow
 interface TaskDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTask(task: Task)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTasks(tasks: List<Task>)
 
     @Transaction
@@ -26,6 +23,6 @@ interface TaskDao {
     fun findTaskDetailById(id: String): Flow<TaskDetail?>
 
     @Delete
-    suspend fun remove(task: Task): Int
+    suspend fun removeTasks(tasks: List<Task>): Int
 
 }
