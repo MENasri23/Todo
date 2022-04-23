@@ -9,7 +9,7 @@ sealed class Resource<out R>(
 
     class Success<out T>(data: T) : Resource<T>(data)
     class Loading<out T>(data: T? = null) : Resource<T>(data)
-    class Error<T>(throwable: Throwable, data: T? = null) : Resource<T>(data, throwable)
+    class Error(throwable: Throwable) : Resource<Nothing>(error = throwable)
 
     override fun toString(): String {
         return when (this) {
@@ -23,7 +23,7 @@ sealed class Resource<out R>(
     companion object {
         fun <T> success(data: T? = null) = Success(data)
         fun <T> loading(data: T? = null) = Loading(data)
-        fun <T> error(throwable: Throwable, data: T? = null) = Error(throwable, data)
+        fun error(throwable: Throwable) = Error(throwable)
     }
 
 }
