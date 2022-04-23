@@ -31,14 +31,16 @@ object Libs {
 
         object Lifecycle {
             const val LIFECYCLE_LIVEDATA_KTX =
-                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE_LIVEDATA_KTX}"
+                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
             const val LIFECYCLE_VIEW_MODEL_KTX =
-                "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VIEW_MODEL_KTX}"
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
         }
 
         object Navigation {
             const val LIVEDATA_KTX =
-                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE_LIVEDATA_KTX}"
+                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+            const val FRAGMENT_KTX =
+                "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_KTX}"
             const val UI_KTX = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_KTX}"
         }
 
@@ -73,8 +75,9 @@ object Libs {
     }
 
     object OkHttp {
+        const val OKHTTP3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP3}"
         const val LOGGING_INTERCEPTOR =
-            "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3_LOGGING_INTERCEPTOR}"
+            "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3}"
     }
 
     object Dagger {

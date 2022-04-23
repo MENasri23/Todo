@@ -24,13 +24,12 @@ object Versions {
     const val ROBOLECTRIC = "4.7.3"
     const val TRUTH = "1.1.3"
 
-    const val LIFECYCLE_LIVEDATA_KTX = "2.4.1"
-    const val LIFECYCLE_VIEW_MODEL_KTX = "2.4.1"
+    const val LIFECYCLE = "2.4.1"
     const val NAVIGATION_KTX = "2.3.5"
 
     const val GSON = "2.9.0"
     const val RETROFIT2 = "2.9.0"
-    const val OKHTTP3_LOGGING_INTERCEPTOR = "4.9.3"
+    const val OKHTTP3 = "4.9.3"
     const val RETROFIT2_GSON_CONVERTOR = "2.9.0"
     const val GLIDE = "4.13.0"
 
