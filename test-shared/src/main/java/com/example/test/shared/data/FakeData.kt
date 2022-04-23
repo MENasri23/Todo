@@ -34,6 +34,13 @@ object FakeData {
         avatar = ""
     )
 
+    val users = listOf(
+        user1,
+        user2,
+        user3,
+        user4,
+    )
+
     val task1 = Task(
         id = "1",
         title = "Task 1",
@@ -74,5 +81,14 @@ object FakeData {
         title = "Task 6",
         status = TaskStatus.Done,
         ownerId = 4L
+    )
+
+    val tasks = listOf(
+        task1,
+        task2,
+        task3,
+        task4,
+        task5,
+        task6,
     )
 }
