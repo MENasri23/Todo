@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import com.example.data.di.IODispatcher
 import com.example.data.source.local.TaskLocalDataSource
 import com.example.data.util.toResource
 import com.example.model.entity.Task
@@ -7,10 +8,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class TaskRepository(
+@Singleton
+class TaskRepository @Inject constructor(
     private val localDataSource: TaskLocalDataSource,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+    @IODispatcher private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) {
 
 

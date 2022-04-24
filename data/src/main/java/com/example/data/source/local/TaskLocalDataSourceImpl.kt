@@ -7,8 +7,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class TaskLocalDataSourceImpl(
+class TaskLocalDataSourceImpl @Inject constructor(
     private val taskDao: TaskDao
 ) : TaskLocalDataSource {
 
