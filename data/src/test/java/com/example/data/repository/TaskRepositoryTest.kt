@@ -83,14 +83,14 @@ class TaskRepositoryTest {
     }
 
     @Test
-    fun `remove task and get remaining task detials`() = coroutineRule.runBlockingTest {
+    fun `remove task and get remaining task details successfully`() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val userTasks = FakeData.tasks.filter { it.ownerId == user.id }
 
         local.insertUser(listOf(user))
         taskRepository.saveTasks(userTasks)
 
-        local.removeTasks(listOf(userTasks[0]))
+        taskRepository.removeTasks(listOf(userTasks[0]))
         val resultAfter = taskRepository.getUserTaskDetailsFlow(user.id).drop(1).first()
 
         assertThat(resultAfter.data).hasSize(userTasks.size - 1)
