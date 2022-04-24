@@ -1,13 +1,13 @@
 package com.example.data.repository
 
-import Resource
+import com.example.model.result.Resource
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.data.source.local.FakeTaskLocalDataSource
 import com.example.test.shared.data.FakeData
 import com.example.test.shared.data.MainCoroutineRule
 import com.example.test.shared.data.runBlockingTest
 import com.google.common.truth.Truth.*
-import isSuccess
+import com.example.model.result.isSuccess
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.junit.Before
@@ -79,6 +79,21 @@ class TaskRepositoryTest {
 
         assertThat(result.isSuccess).isTrue()
         assertThat(result.data).hasSize(userTasks.size)
+
+    }
+
+    @Test
+    fun `remove task and get remaining task detials`() = coroutineRule.runBlockingTest {
+        val user = FakeData.user1
+        val userTasks = FakeData.tasks.filter { it.ownerId == user.id }
+
+        local.insertUser(listOf(user))
+        taskRepository.saveTasks(userTasks)
+
+        local.removeTasks(listOf(userTasks[0]))
+        val resultAfter = taskRepository.getUserTaskDetailsFlow(user.id).drop(1).first()
+
+        assertThat(resultAfter.data).hasSize(userTasks.size - 1)
 
     }
 

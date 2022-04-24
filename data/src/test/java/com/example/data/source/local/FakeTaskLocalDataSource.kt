@@ -46,8 +46,7 @@ class FakeTaskLocalDataSource : TaskLocalDataSource {
 
     override suspend fun removeTasks(tasks: List<Task>): Boolean {
 //        delay(500L)
-        this.tasks.removeAll(tasks)
-        return true
+        return  this.tasks.removeAll(tasks)
     }
 
     suspend fun insertUser(users: List<User>) {

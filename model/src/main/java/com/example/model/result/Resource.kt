@@ -1,3 +1,5 @@
+package com.example.model.result
+
 /**
  * A generic class that holds a value with its loading status.
  * @param <T>

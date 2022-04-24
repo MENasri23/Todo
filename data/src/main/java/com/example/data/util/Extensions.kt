@@ -1,6 +1,6 @@
 package com.example.data.util
 
-import Resource
+import com.example.model.result.Resource
 import kotlinx.coroutines.flow.*
 
 fun <T> Flow<T>.toResource(): Flow<Resource<T>> =
