@@ -21,9 +21,9 @@ sealed class Resource<out R>(
     }
 
     companion object {
-        fun <T> success(data: T? = null) = Success(data)
-        fun <T> loading(data: T? = null) = Loading(data)
-        fun error(throwable: Throwable) = Error(throwable)
+        fun <T> success(data: T): Resource<T> = Success(data)
+        fun <T> loading(data: T? = null): Resource<T> = Loading(data)
+        fun error(throwable: Throwable): Resource<Nothing> = Error(throwable)
     }
 
 }
