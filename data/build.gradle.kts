@@ -43,6 +43,9 @@ dependencies {
 
     implementation(Libs.Kotlinx.COROUTINES_ANDROID)
 
+    implementation(Libs.Dagger.DAGGER)
+    implementation(Libs.Dagger.COMPILER)
+
     testImplementation(Libs.Test.JUNIT)
     testImplementation(Libs.Test.JUNIT_EXT)
     testImplementation(Libs.Kotlinx.COROUTINES_TEST)
