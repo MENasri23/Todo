@@ -67,4 +67,19 @@ class TaskRepositoryTest {
         assertThat(result.data).isEmpty()
     }
 
+    @Test
+    fun `load all tasks of the user and return success result`() = coroutineRule.runBlockingTest {
+        val user = FakeData.user4
+        val userTasks = FakeData.tasks.filter { it.ownerId == user.id }
+
+        local.insertUser(listOf(user))
+        taskRepository.saveTasks(userTasks)
+
+        val result = taskRepository.getUserTaskDetailsFlow(user.id).drop(1).first()
+
+        assertThat(result.isSuccess).isTrue()
+        assertThat(result.data).hasSize(userTasks.size)
+
+    }
+
 }
