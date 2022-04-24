@@ -47,4 +47,5 @@ dependencies {
     testImplementation(Libs.Test.JUNIT_EXT)
     testImplementation(Libs.Kotlinx.COROUTINES_TEST)
     testImplementation(Libs.Androidx.ARCH_TEST_CORE)
+    testImplementation(Libs.Test.TRUTH)
 }
