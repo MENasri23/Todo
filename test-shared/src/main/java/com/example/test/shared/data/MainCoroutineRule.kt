@@ -40,10 +40,12 @@ class MainCoroutineRule(
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-fun MainCoroutineRule.runBlockingTest(block: suspend TestScope.() -> Unit) =
-    runTest(testDispatcher) {
-        block()
-    }
+fun MainCoroutineRule.runBlockingTest(
+    dispatcher: TestDispatcher? = null,
+    block: suspend TestScope.() -> Unit
+) = runTest(dispatcher ?: testDispatcher) {
+    block()
+}
 
 /**
  * Creates a new [CoroutineScope] with the rule's testDispatcher
