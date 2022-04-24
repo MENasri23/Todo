@@ -16,7 +16,7 @@ import java.util.*
         )
     ]
 )
-class Task(
+data class Task(
 
     /**
      * the unique random id to store task in database.
