@@ -34,13 +34,18 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
     implementation(project(":model"))
     implementation(project(":data"))
     implementation(project(":database"))
-    
+
 
     implementAppLibraries()
 
