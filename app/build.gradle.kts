@@ -49,6 +49,23 @@ dependencies {
 
     implementAppLibraries()
 
+    implementation(Libs.Androidx.ACTIVITY_KTX)
+    implementation(Libs.Androidx.FRAGMENT_KTX)
+    implementation(Libs.Androidx.LEGACY_SUPPORT)
+
+    implementation(Libs.Androidx.Lifecycle.RUNTIME)
+    implementation(Libs.Androidx.Lifecycle.LIVEDATA_KTX)
+    implementation(Libs.Androidx.Lifecycle.VIEW_MODEL_KTX)
+
+    implementation(Libs.Androidx.Navigation.FRAGMENT_KTX)
+    implementation(Libs.Androidx.Navigation.RUNTIME_KTX)
+    implementation(Libs.Androidx.Navigation.UI_KTX)
+
+    implementation(Libs.Test.TIMBER)
+
+    implementation(Libs.Dagger.DAGGER)
+    implementation(Libs.Dagger.COMPILER)
+
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)
     androidTestImplementation(Libs.Test.ESPRESSO)

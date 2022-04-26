@@ -26,6 +26,7 @@ object Versions {
     const val ESPRESSO = "3.4.0"
     const val ROBOLECTRIC = "4.7.3"
     const val TRUTH = "1.1.3"
+    const val TIMBER = "5.0.1"
 
     const val LIFECYCLE = "2.4.1"
     const val NAVIGATION_KTX = "2.3.5"

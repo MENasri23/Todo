@@ -14,6 +14,7 @@ object Libs {
         const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
         const val ROBOLECTRIC = "org.robolectric:robolectric:${Versions.ROBOLECTRIC}"
         const val TRUTH = "com.google.truth:truth:${Versions.TRUTH}"
+        const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     }
 
     object Androidx {

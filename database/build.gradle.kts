@@ -48,6 +48,7 @@ dependencies {
 
     implementation(project(":model"))
     implementation(project(":shared"))
+    implementation(project(":test-shared"))
     androidTestImplementation(project(":test-shared"))
 
     implementation(Libs.Androidx.Room.RUNTIME)
