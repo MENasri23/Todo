@@ -4,7 +4,7 @@ object Libs {
     private const val IMPLEMENTATION = "implementation"
 
     object Core {
-        const val DESUGAR= "com.android.tools:desugar_jdk_libs:1.1.5"
+        const val DESUGAR = "com.android.tools:desugar_jdk_libs:1.1.5"
     }
 
     object Test {
@@ -24,21 +24,26 @@ object Libs {
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
 
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Versions.ACTIVITY}"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}"
+        const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${Versions.LEGACY_SUPPORT}"
+
         const val TEST_CORE_KTX = "androidx.test:core-ktx:${Versions.ANDROIDX_TEST}"
         const val ARCH_TEST_CORE = "androidx.arch.core:core-testing:${Versions.ARCH_TEST_CORE}"
         const val TEST_RULES = "androidx.test:rules:${Versions.ANDROIDX_TEST}"
         const val TEST_RUNNER = "androidx.test:runner:${Versions.ANDROIDX_TEST}"
 
         object Lifecycle {
-            const val LIFECYCLE_LIVEDATA_KTX =
+            const val RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+            const val LIVEDATA_KTX =
                 "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
-            const val LIFECYCLE_VIEW_MODEL_KTX =
+            const val VIEW_MODEL_KTX =
                 "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
         }
 
         object Navigation {
-            const val LIVEDATA_KTX =
-                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+            const val RUNTIME_KTX =
+                "androidx.navigation:navigation-runtime-ktx:${Versions.NAVIGATION_KTX}"
             const val FRAGMENT_KTX =
                 "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_KTX}"
             const val UI_KTX = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_KTX}"
