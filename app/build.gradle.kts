@@ -1,8 +1,10 @@
 import Libs.Androidx.implementAppLibraries
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -53,6 +55,9 @@ dependencies {
     implementation(Libs.Androidx.FRAGMENT_KTX)
     implementation(Libs.Androidx.LEGACY_SUPPORT)
 
+    implementation(Libs.Kotlinx.COROUTINES_ANDROID)
+    implementation(Libs.Kotlinx.COROUTINES_ANDROID)
+
     implementation(Libs.Androidx.Lifecycle.RUNTIME)
     implementation(Libs.Androidx.Lifecycle.LIVEDATA_KTX)
     implementation(Libs.Androidx.Lifecycle.VIEW_MODEL_KTX)
@@ -61,10 +66,17 @@ dependencies {
     implementation(Libs.Androidx.Navigation.RUNTIME_KTX)
     implementation(Libs.Androidx.Navigation.UI_KTX)
 
+
+    implementation(Libs.Androidx.Room.RUNTIME)
+    implementation(Libs.Androidx.Room.KTX)
+    kapt(Libs.Androidx.Room.COMPILER)
+
     implementation(Libs.Test.TIMBER)
 
     implementation(Libs.Dagger.DAGGER)
-    implementation(Libs.Dagger.COMPILER)
+    implementation(Libs.Dagger.SUPPORT)
+    kapt(Libs.Dagger.COMPILER)
+    kapt(Libs.Dagger.PROCESSOR)
 
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)

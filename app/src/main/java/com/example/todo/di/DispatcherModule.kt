@@ -1,14 +1,15 @@
-package com.example.data.di
+package com.example.todo.di
 
+import com.example.data.di.CpuDispatcher
+import com.example.data.di.IODispatcher
+import com.example.data.di.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import javax.inject.Qualifier
-
 
 @Module
-class DispatcherModule {
+object DispatcherModule {
 
     @IODispatcher
     @Provides
@@ -24,15 +25,4 @@ class DispatcherModule {
 }
 
 
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class IODispatcher
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class MainDispatcher
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class CpuDispatcher
 

@@ -42,6 +42,6 @@ object Versions {
     const val COROUTINES = "1.3.9"
     const val COROUTINES_TEST = "1.6.0"
 
-    const val DAGGER = "2.40.5"
+    const val DAGGER = "2.41"
 
 }

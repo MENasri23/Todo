@@ -89,6 +89,8 @@ object Libs {
     object Dagger {
         const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
         const val COMPILER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
+        const val SUPPORT = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
+        const val PROCESSOR = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
     }
 
     object Glide {

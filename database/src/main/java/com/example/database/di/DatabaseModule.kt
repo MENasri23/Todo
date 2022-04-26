@@ -5,6 +5,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.database.AppDatabase
+import com.example.model.entity.User
 import com.example.test.shared.data.FakeData
 import dagger.Module
 import dagger.Provides
@@ -51,6 +52,10 @@ object DatabaseModule {
         }
 
     }
+
+    @Provides
+    @Singleton
+    fun provideCurrentUser(): User = FakeData.user1
 
     @Provides
     fun provideTaskDao(database: AppDatabase) = database.taskDao()
