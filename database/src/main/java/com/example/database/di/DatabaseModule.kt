@@ -2,13 +2,22 @@ package com.example.database.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.database.AppDatabase
+import com.example.test.shared.data.FakeData
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import javax.inject.Singleton
 
 @Module
 object DatabaseModule {
+
+    private lateinit var database: AppDatabase
+
+    private const val DATABASE_NAME = "todo-db"
 
     @Provides
     @Singleton
@@ -16,10 +25,31 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "todo-db"
+            DATABASE_NAME
         )
             .fallbackToDestructiveMigration()
-            .build()
+            // TODO: Remove this callback in production
+            .addCallback(object : RoomDatabase.Callback() {
+                override fun onCreate(db: SupportSQLiteDatabase) {
+                    super.onCreate(db)
+                    GlobalScope.launch {
+                        insertFakeData()
+                    }
+                }
+            })
+            .build().also { database = it }
+    }
+
+
+    suspend fun insertFakeData() {
+        with(database) {
+            val userDao = userDao()
+            for (user in FakeData.users) {
+                userDao.insertUser(user)
+            }
+            taskDao().insertTasks(FakeData.tasks)
+        }
+
     }
 
     @Provides
