@@ -141,7 +141,7 @@ class AppDatabaseTest {
     fun removeUserTasks_whenUserDeleted() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val tasks = listOf(FakeData.task2, FakeData.task4)
-        val categories = listOf(FakeData.category1, FakeData.category4)
+        val categories = listOf(FakeData.category1)
 
         insertData(listOf(user), tasks, categories)
 
@@ -157,7 +157,7 @@ class AppDatabaseTest {
     fun removeTasks_taskTableIsNotEmpty() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val tasks = listOf(FakeData.task2, FakeData.task4)
-        val categories = listOf(FakeData.category1, FakeData.category4)
+        val categories = listOf(FakeData.category1)
 
         insertData(listOf(user), tasks, categories)
 
@@ -207,8 +207,8 @@ class AppDatabaseTest {
             categories: List<Category>
         ) {
             insertUsers(userDao, users)
-            insertTasks(taskDao, tasks)
             insertCategories(categoryDao, categories)
+            insertTasks(taskDao, tasks)
         }
 
         suspend fun insertUsers(

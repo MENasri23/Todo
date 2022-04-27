@@ -61,7 +61,7 @@ object FakeData {
     )
 
     val category4 = Category(
-        id = 3L,
+        id = 4L,
         name = "Personal",
         ownerId = user4.id
     )
@@ -77,7 +77,7 @@ object FakeData {
         id = "1",
         title = "Task 1",
         status = TaskStatus.Todo,
-        ownerId = user2.id,
+        ownerId = user1.id,
         categoryId = category1.id
     )
 
@@ -93,7 +93,7 @@ object FakeData {
         id = "3",
         title = "Task 3",
         status = TaskStatus.Doing,
-        ownerId = 3L,
+        ownerId = user3.id,
         categoryId = category3.id
     )
 
@@ -101,7 +101,7 @@ object FakeData {
         id = "4",
         title = "Task 4",
         status = TaskStatus.Done,
-        ownerId = 1L,
+        ownerId = user1.id,
         categoryId = category1.id
     )
 
