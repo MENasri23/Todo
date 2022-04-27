@@ -48,6 +48,10 @@ object DatabaseModule {
             for (user in FakeData.users) {
                 userDao.insertUser(user)
             }
+            val categoryDao = categoryDao()
+            for (category in FakeData.categories) {
+                categoryDao.insertCategory(category)
+            }
             taskDao().insertTasks(FakeData.tasks)
         }
 
