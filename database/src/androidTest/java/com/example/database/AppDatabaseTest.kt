@@ -157,11 +157,22 @@ class AppDatabaseTest {
     fun removeTasks_taskTableIsNotEmpty() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val tasks = listOf(FakeData.task2, FakeData.task4)
-        val categoreis = listOf(FakeData.category1, FakeData.category4)
+        val categories = listOf(FakeData.category1, FakeData.category4)
 
-        insertData(listOf(user), tasks, categoreis)
+        insertData(listOf(user), tasks, categories)
 
         assertThat(taskDao.removeTasks(tasks)).isNotEqualTo(0)
+    }
+
+    @Test
+    fun addCategory() = coroutineRule.runBlockingTest {
+        val user = FakeData.user1
+        val categories = listOf(FakeData.category1)
+
+        insertUsers(userDao, listOf(user))
+
+        assertThat(categoryDao.insertCategory(categories[0])).isEqualTo(1L)
+
     }
 
     suspend fun insertData(

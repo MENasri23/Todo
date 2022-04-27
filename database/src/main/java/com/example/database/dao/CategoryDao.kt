@@ -1,12 +1,10 @@
 package com.example.database.dao
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.model.entity.Category
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface CategoryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -16,5 +14,5 @@ interface CategoryDao {
     fun loadUserCategories(userId: Long): Flow<List<Category>>
 
     @Delete
-    suspend fun removeCategory(category: Category): Long
+    suspend fun removeCategory(category: Category): Int
 }
