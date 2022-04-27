@@ -13,6 +13,12 @@ import java.util.*
             parentColumns = ["id"],
             childColumns = ["owner_id"],
             onDelete = CASCADE
+        ),
+        ForeignKey(
+            entity = Category::class,
+            parentColumns = ["id"],
+            childColumns = ["category_id"],
+            onDelete = CASCADE
         )
     ]
 )
@@ -41,6 +47,9 @@ data class Task(
      */
     @ColumnInfo(name = "owner_id", index = true)
     val ownerId: Long,
+
+    @ColumnInfo(name = "category_id", index = true)
+    val categoryId: Long,
 
     /**
      * When the task was created.
