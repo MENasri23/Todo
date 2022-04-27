@@ -62,4 +62,7 @@ object DatabaseModule {
 
     @Provides
     fun provideUserDao(database: AppDatabase) = database.userDao()
+
+    @Provides
+    fun provideUserCategory(database: AppDatabase) = database.categoryDao()
 }
