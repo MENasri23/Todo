@@ -5,9 +5,11 @@ import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
+import com.example.database.dao.CategoryDao
 import com.example.database.dao.TaskDao
 import com.example.database.dao.UserDao
 import com.example.database.view.TaskDetail
+import com.example.model.entity.Category
 import com.example.model.entity.Task
 import com.example.model.entity.User
 import com.example.test.shared.data.FakeData
@@ -38,6 +40,7 @@ class AppDatabaseTest {
     private lateinit var database: AppDatabase
     private lateinit var userDao: UserDao
     private lateinit var taskDao: TaskDao
+    private lateinit var categoryDao: CategoryDao
 
     @Before
     fun setupDb() {
@@ -52,6 +55,7 @@ class AppDatabaseTest {
 
         userDao = database.userDao()
         taskDao = database.taskDao()
+        categoryDao = database.categoryDao()
     }
 
     @After
@@ -69,7 +73,7 @@ class AppDatabaseTest {
     @Test
     fun getTaskDetails_whenNewTaskInserted() = coroutineRule.runBlockingTest {
         with(FakeData) {
-            insertData(listOf(user1, user2), listOf(task1, task2))
+            insertData(listOf(user1, user2), listOf(task1, task2), listOf(category1))
 
             val taskDetails = taskDao.getTaskDetails().first()
             val taskDetail1 = taskDetails[0]
@@ -83,8 +87,9 @@ class AppDatabaseTest {
         with(FakeData) {
             val users = listOf(user1)
             val tasks = listOf(task2, task4)
+            val categories = listOf(category1)
 
-            insertData(users, tasks)
+            insertData(users, tasks, categories)
 
             taskDao.loadUserTaskDetails(user1.id).first().let { taskDetails ->
                 assertThat(taskDetails).hasSize(2)
@@ -112,8 +117,9 @@ class AppDatabaseTest {
     fun getUserTaskDetails_whenSomeTaskRemoved() = coroutineRule.runBlockingTest {
         val users = listOf(FakeData.user1, FakeData.user4)
         val tasks = listOf(FakeData.task2, FakeData.task4, FakeData.task6)
+        val categories = listOf(FakeData.category1, FakeData.category4)
 
-        insertData(users, tasks)
+        insertData(users, tasks, categories)
 
         taskDao.removeTasks(listOf(FakeData.task2))
 
@@ -135,7 +141,9 @@ class AppDatabaseTest {
     fun removeUserTasks_whenUserDeleted() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val tasks = listOf(FakeData.task2, FakeData.task4)
-        insertData(listOf(user), tasks)
+        val categories = listOf(FakeData.category1, FakeData.category4)
+
+        insertData(listOf(user), tasks, categories)
 
         val removedCount = userDao.removeUser(user)
         val currentUserTaskDetails = taskDao.loadUserTaskDetails(user.id).first()
@@ -149,27 +157,33 @@ class AppDatabaseTest {
     fun removeTasks_taskTableIsNotEmpty() = coroutineRule.runBlockingTest {
         val user = FakeData.user1
         val tasks = listOf(FakeData.task2, FakeData.task4)
-        insertData(listOf(user), tasks)
+        val categoreis = listOf(FakeData.category1, FakeData.category4)
+
+        insertData(listOf(user), tasks, categoreis)
 
         assertThat(taskDao.removeTasks(tasks)).isNotEqualTo(0)
     }
 
     suspend fun insertData(
-        users: List<com.example.model.entity.User>,
-        tasks: List<com.example.model.entity.Task>
+        users: List<User>,
+        tasks: List<Task>,
+        categories: List<Category>
     ) {
-        insertAll(userDao, taskDao, users, tasks)
+        insertAll(userDao, taskDao, categoryDao, users, tasks, categories)
     }
 
     companion object {
         suspend fun insertAll(
             userDao: UserDao,
             taskDao: TaskDao,
-            users: List<com.example.model.entity.User>,
-            tasks: List<com.example.model.entity.Task>
+            categoryDao: CategoryDao,
+            users: List<User>,
+            tasks: List<Task>,
+            categories: List<Category>
         ) {
             insertUsers(userDao, users)
             insertTasks(taskDao, tasks)
+            insertCategories(categoryDao, categories)
         }
 
         suspend fun insertUsers(
@@ -182,9 +196,16 @@ class AppDatabaseTest {
 
         suspend fun insertTasks(
             taskDao: TaskDao,
-            tasks: List<com.example.model.entity.Task>
+            tasks: List<Task>
         ) {
             taskDao.insertTasks(tasks)
+        }
+
+        suspend fun insertCategories(
+            categoryDao: CategoryDao,
+            categories: List<Category>
+        ) {
+            categories.forEach { categoryDao.insertCategory(it) }
         }
     }
 }
