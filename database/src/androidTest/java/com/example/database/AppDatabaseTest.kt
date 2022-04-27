@@ -175,6 +175,20 @@ class AppDatabaseTest {
 
     }
 
+    @Test
+    fun addCategoriesAndCheckInserted() = coroutineRule.runBlockingTest {
+        val user = FakeData.user1
+        val categories = listOf(FakeData.category1, FakeData.category2)
+
+        insertUsers(userDao, listOf(user))
+        insertCategories(categoryDao, categories)
+
+        val insertedCategories = categoryDao.loadUserCategories(user.id).first()
+
+        assertThat(insertedCategories).hasSize(2)
+
+    }
+
     suspend fun insertData(
         users: List<User>,
         tasks: List<Task>,
