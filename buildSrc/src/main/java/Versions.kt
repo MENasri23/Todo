@@ -29,7 +29,7 @@ object Versions {
     const val TIMBER = "5.0.1"
 
     const val LIFECYCLE = "2.4.1"
-    const val NAVIGATION_KTX = "2.3.5"
+    const val NAVIGATION_KTX = "2.4.2"
 
     const val GSON = "2.9.0"
     const val RETROFIT2 = "2.9.0"
