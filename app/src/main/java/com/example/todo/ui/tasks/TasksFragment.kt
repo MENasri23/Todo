@@ -19,7 +19,10 @@ class TasksFragment : BaseFragment(R.layout.fragment_tasks) {
         super.onViewCreated(view, savedInstanceState)
 
         launchAndRepeatWithViewLifecycle {
-
+            viewModel.taskDetails.collect {
+                Timber.d("\n\n\n${it.data?.get(0)?.category}\n\n\n")
+                Timber.d("\n\n\n${it}\n\n\n")
+            }
         }
     }
 
