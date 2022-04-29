@@ -39,7 +39,7 @@ object Versions {
 
     const val ROOM = "2.4.2"
 
-    const val COROUTINES = "1.3.9"
+    const val COROUTINES = "1.6.0"
     const val COROUTINES_TEST = "1.6.0"
 
     const val DAGGER = "2.41"
