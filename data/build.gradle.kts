@@ -3,6 +3,7 @@ import Libs.Androidx.implementAppLibraries
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -44,7 +45,7 @@ dependencies {
     implementation(Libs.Kotlinx.COROUTINES_ANDROID)
 
     implementation(Libs.Dagger.DAGGER)
-    implementation(Libs.Dagger.COMPILER)
+    kapt(Libs.Dagger.COMPILER)
 
     testImplementation(Libs.Test.JUNIT)
     testImplementation(Libs.Test.JUNIT_EXT)
