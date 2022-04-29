@@ -2,6 +2,7 @@ package com.example.todo.di
 
 import android.content.Context
 import com.example.data.di.DataSourceModule
+import com.example.data.di.DispatcherModule
 import com.example.database.di.DatabaseModule
 import com.example.todo.TodoApplication
 import dagger.BindsInstance

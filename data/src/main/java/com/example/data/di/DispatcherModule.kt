@@ -1,8 +1,5 @@
-package com.example.todo.di
+package com.example.data.di
 
-import com.example.data.di.CpuDispatcher
-import com.example.data.di.IODispatcher
-import com.example.data.di.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineDispatcher
