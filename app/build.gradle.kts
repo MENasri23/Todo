@@ -78,6 +78,8 @@ dependencies {
     kapt(Libs.Dagger.COMPILER)
     kapt(Libs.Dagger.PROCESSOR)
 
+    implementation(Libs.Widget.CIRCULAR_IMAGE_VIEW)
+
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)
     androidTestImplementation(Libs.Test.ESPRESSO)

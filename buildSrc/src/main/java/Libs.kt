@@ -98,4 +98,8 @@ object Libs {
         const val COMPILER = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
     }
 
+    object Widget {
+        const val CIRCULAR_IMAGE_VIEW =  "de.hdodenhof:circleimageview:3.1.0"
+    }
+
 }
