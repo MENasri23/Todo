@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="lapis_blue_700">#FF303F9F</color>
+    <color name="lapis_blue_900">#15317E</color>
+    <color name="persian_blue_700">#1976D2</color>
+    <color name="persian_blue_900">#0D47A1</color>
+    <color name="blue_charcoal">#020417</color>
+    <color name="amethyst_smoky">#9D9AB4</color>
+    <color name="magnolia">#F4F6FD</color>
+    <color name="cloudy_blue">#ADBAEB</color>
+    <color name="deep_lilac">#A056C5</color>
+    <color name="rhino">#373B5E</color>
 </resources>
