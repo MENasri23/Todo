@@ -6,8 +6,13 @@
     android:background="?attr/colorPrimaryVariant"
     tools:context=".ui.home.HomeFragment">
 
-    <include
+    <!--<include
         layout="@layout/home_drawer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    -->
+    <include
+        layout="@layout/home_main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

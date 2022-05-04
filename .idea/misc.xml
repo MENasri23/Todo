@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1635" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/circle.xml" value="0.1605" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ic_analytics_24.xml" value="0.1635" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1635" />
+        <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1635" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ic_category_24.xml" value="0.1635" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ic_task_24.xml" value="0.1635" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/drawable/ripple_with_border.xml" value="0.2515" />
@@ -13,6 +15,8 @@
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/layout/fragment_tasks.xml" value="0.1" />
         <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/layout/home_drawer_view.xml" value="0.264" />
+        <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/layout/home_main_view.xml" value="0.264" />
+        <entry key="..\:/Education/AndroidEdu/myProjects/Todo/app/src/main/res/menu/top_app_bar.xml" value="0.25" />
       </map>
     </option>
   </component>

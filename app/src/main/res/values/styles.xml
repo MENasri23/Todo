@@ -8,4 +8,9 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
+
+    <style name="Widget.Todo.AppBarLayout" parent="Widget.Design.AppBarLayout">
+        <item name="android:background">?attr/colorOnPrimary</item>
+        <item name="elevation">0dp</item>
+    </style>
 </resources>

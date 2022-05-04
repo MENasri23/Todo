@@ -3,4 +3,6 @@
     <string name="all_tasks">All Tasks</string>
     <string name="categories">Categories</string>
     <string name="analytics">Analytics</string>
+    <string name="search">Search</string>
+    <string name="today_tasks">TODAY\'S TASKS</string>
 </resources>
