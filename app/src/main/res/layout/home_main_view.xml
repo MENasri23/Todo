@@ -38,12 +38,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/space_medium"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
             android:layout_marginTop="@dimen/space_small"
             android:text="@string/categories"
             android:textAppearance="?attr/textAppearanceBody2"
@@ -57,12 +57,15 @@
             android:layout_marginTop="@dimen/space_small"
             android:clipToPadding="false"
             android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/space_medium"
+            android:paddingVertical="@dimen/space_small"
             tools:itemCount="3"
             tools:listitem="@layout/category_item_view" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
             android:layout_marginTop="@dimen/space_large"
             android:text="@string/today_tasks"
             android:textAppearance="?attr/textAppearanceBody2"
@@ -76,6 +79,15 @@
             android:layout_marginTop="@dimen/space_small" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNewTask"
+        android:contentDescription="@string/new_task"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_medium"
+        app:srcCompat="@drawable/ic_add_24" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -5,6 +5,7 @@
     <string name="analytics">Analytics</string>
     <string name="search">Search</string>
     <string name="today_tasks">TODAY\'S TASKS</string>
+    <string name="new_task">Add New Task</string>
 
     <plurals name="tasks_in_category">
         <item quantity="one">1 task</item>
