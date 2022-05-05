@@ -3,8 +3,9 @@
     <style name="Theme.Todo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/lapis_blue_700</item>
-        <item name="colorPrimaryVariant">@color/lapis_blue_900</item>
+        <item name="colorPrimaryVariant">@color/deep_blue</item>
         <item name="colorOnPrimary">@color/magnolia</item>
+        <item name="colorOnPrimarySurface">@color/cloudy_blue</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/persian_blue_700</item>
         <item name="colorSecondaryVariant">@color/persian_blue_900</item>
