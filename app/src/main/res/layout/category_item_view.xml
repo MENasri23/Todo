@@ -2,15 +2,10 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Todo.MaterialCard"
     android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="@dimen/space_large"
-    app:cardElevation="8dp"
-    app:cardPreventCornerOverlap="true"
-    app:contentPaddingBottom="@dimen/space_medium"
-    app:contentPaddingLeft="@dimen/space_medium"
-    app:contentPaddingRight="@dimen/space_medium"
     app:contentPaddingTop="@dimen/space_large">
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -13,4 +13,12 @@
         <item name="android:background">?attr/colorOnPrimary</item>
         <item name="elevation">0dp</item>
     </style>
+
+    <style name="Widget.Todo.MaterialCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/space_large</item>
+        <item name="cardElevation">@dimen/space_small</item>
+        <item name="contentPaddingBottom">@dimen/space_medium</item>
+        <item name="contentPaddingLeft">@dimen/space_medium</item>
+        <item name="contentPaddingRight">@dimen/space_medium</item>
+    </style>
 </resources>
