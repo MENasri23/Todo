@@ -5,4 +5,10 @@
     <string name="analytics">Analytics</string>
     <string name="search">Search</string>
     <string name="today_tasks">TODAY\'S TASKS</string>
+
+    <plurals name="tasks_in_category">
+        <item quantity="one">1 task</item>
+        <item quantity="other">%s tasks</item>
+    </plurals>
+
 </resources>
