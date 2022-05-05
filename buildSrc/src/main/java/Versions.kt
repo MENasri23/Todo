@@ -45,5 +45,6 @@ object Versions {
     const val DAGGER = "2.41"
 
     const val CIRCLE_IMAGE = "3.1.0"
+    const val LOTTIE = "3.0.0"
 
 }

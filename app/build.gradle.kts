@@ -79,6 +79,7 @@ dependencies {
     kapt(Libs.Dagger.PROCESSOR)
 
     implementation(Libs.Widget.CIRCULAR_IMAGE_VIEW)
+    implementation (Libs.Widget.LOTTIE)
 
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.Test.JUNIT_EXT)

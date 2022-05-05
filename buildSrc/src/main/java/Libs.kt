@@ -100,6 +100,7 @@ object Libs {
 
     object Widget {
         const val CIRCULAR_IMAGE_VIEW =  "de.hdodenhof:circleimageview:3.1.0"
+        const val LOTTIE = "com.airbnb.android:lottie:${Versions.LOTTIE}"
     }
 
 }
