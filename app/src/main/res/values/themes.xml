@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/lapis_blue_700</item>
         <item name="colorPrimaryVariant">@color/deep_blue</item>
         <item name="colorOnPrimary">@color/magnolia</item>
-        <item name="colorOnPrimarySurface">@color/cloudy_blue</item>
+        <item name="colorOnPrimarySurface">@color/magnolia</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/persian_blue_700</item>
         <item name="colorSecondaryVariant">@color/persian_blue_900</item>
@@ -13,5 +13,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorOnSurface">@color/amethyst_smoky</item>
     </style>
 </resources>

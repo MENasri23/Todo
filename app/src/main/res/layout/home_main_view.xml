@@ -46,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_small"
             android:text="@string/categories"
-            android:textAppearance="?attr/textAppearanceBody2" />
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoryList"
@@ -54,14 +56,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_small"
             android:clipToPadding="false"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            tools:itemCount="3"
+            tools:listitem="@layout/category_item_view" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_large"
             android:text="@string/today_tasks"
-            android:textAppearance="?attr/textAppearanceBody2" />
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todayTasksList"
